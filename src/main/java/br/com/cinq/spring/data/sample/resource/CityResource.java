@@ -52,7 +52,8 @@ public class CityResource {
             return Response.status(Response.Status.BAD_REQUEST).entity(validationErrors).build();
         }
 
-        loadService.saveIfNotExistsByNameIgnoringIds(cities); // async request
+        // TODO - add a route to query for async request processing result
+        loadService.saveIfNotExistsByNameIgnoringIds(cities);
 
         return Response.accepted().build();
     }

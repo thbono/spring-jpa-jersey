@@ -11,5 +11,4 @@ public class ResourceConfiguration extends ResourceConfig {
         register(CityResource.class);
     }
 
-
 }

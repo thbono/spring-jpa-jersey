@@ -9,3 +9,5 @@ AMQP
 Name unicidade
 
 Ignore ids
+
+TODOs

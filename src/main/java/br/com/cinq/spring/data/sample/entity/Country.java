@@ -1,6 +1,7 @@
 package br.com.cinq.spring.data.sample.entity;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.google.common.base.MoreObjects;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.Entity;
@@ -26,6 +27,18 @@ public class Country {
 
     public void setId(final Integer id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public String toString() {
+        return MoreObjects.toStringHelper(this)
+                .add("id", id)
+                .add("name", name)
+                .toString();
     }
 
 }

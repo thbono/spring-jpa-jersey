@@ -46,9 +46,11 @@ It must return, at least the following:
 
 The load cities feature is implemented through REST, accepting a JSON array of cities as input. The input does not need IDs, that are ignored if provided (names are used as unity criteria). The **curl** tool can be used for testing the POST operation:
 
-    curl -v -H "Content-Type: application/json" -d '[{"name": "Belo Horizonte", "country": {"name": "Brazil"}}]' http://localhost:8090/rest/cities 
+    curl -v -H "Content-Type: application/json" -d '[{"name": "San Francisco", "country": {"name": "United Status"}}]' http://localhost:8090/rest/cities 
 
 The operation to load the data into database itself is asynchronous, so the expected response code is 202 (Accepted).
+
+Refresh the http://localhost:8090/rest/cities?country=Uni URL in browser to see the new city. 
 
 The following request is invalid (missing city name):
 
@@ -61,7 +63,7 @@ So the response code must be 404 (Bad Request) with the payload:
 # Implementation details
 
 - Dependencies versions were updated. This caused some changes in Spring Context declaration of JUnit tests. Details: https://spring.io/blog/2016/04/15/testing-improvements-in-spring-boot-1-4 
-- Application class was moved to the root package, so Spring can load all the component without explicit package declaration
+- Application class was moved to the root package, so Spring can load all the component without explicit package declaration.
 - Load cities feature was implemented asynchronously through Spring Async capabilities. It could also had done with messaging, for example, using AQMP protocol. First option was chosen to avoid external dependency of an AQMP server, like RabbitMQ.  
 - The existing tests were moved to the same package of its testing class, to provide code coverage metrics using IntelliJ or Jacoco.
 - The findLikeName method in Country repository was created just to meet existing tests compliance (TDD). The corresponding implementation using Spring Data convention would be findByNameLike. 

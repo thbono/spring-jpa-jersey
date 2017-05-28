@@ -23,7 +23,7 @@ public class CityLoadService {
     private CountryService countryService;
 
     @Async
-    public void saveIfNotExistsByNameIgnoringIds(final List<City> cities) throws InterruptedException {
+    public void saveIfNotExistsByNameIgnoringIds(final List<City> cities) {
         Preconditions.checkNotNull(cities);
         logger.info("Saving cities (ignoring ids): {}", cities);
 

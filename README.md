@@ -11,3 +11,7 @@ Name unicidade
 Ignore ids
 
 TODOs
+
+findLikeName
+
+Test package

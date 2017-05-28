@@ -1,8 +1,7 @@
-package br.com.cinq.spring.data.repository.test;
+package br.com.cinq.spring.data.sample.repository;
 
 import br.com.cinq.spring.data.sample.Application;
 import br.com.cinq.spring.data.sample.entity.Country;
-import br.com.cinq.spring.data.sample.repository.CountryRepository;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

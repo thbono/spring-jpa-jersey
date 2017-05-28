@@ -17,7 +17,7 @@ public final class ValidationHelper {
 
     private static final ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();
 
-    private  ValidationHelper() {
+    private ValidationHelper() {
     }
 
     public static <T> List<ValidationError> validateList(List<T> objects) {
@@ -37,6 +37,9 @@ public final class ValidationHelper {
         private int index;
 
         private String message;
+
+        protected ValidationError() {
+        }
 
         ValidationError(final int index, final ConstraintViolation violation) {
             this.index = index;

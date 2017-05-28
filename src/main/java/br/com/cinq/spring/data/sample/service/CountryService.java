@@ -12,7 +12,7 @@ public class CountryService {
     @Autowired
     private CountryRepository repository;
 
-    public Country saveIfNotExistsByName(final Country country) {
+    Country saveIfNotExistsByName(final Country country) {
         Preconditions.checkNotNull(country);
 
         final Country actualCountry = repository.findFirstByNameIgnoreCase(country.getName());

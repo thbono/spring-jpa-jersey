@@ -2,6 +2,7 @@ package br.com.cinq.spring.data.sample.entity;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.google.common.base.MoreObjects;
+import com.google.common.base.Preconditions;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.Entity;
@@ -23,6 +24,10 @@ public class Country {
     private String name;
 
     public Country() {
+    }
+
+    public Country(final String name) {
+        this.name = Preconditions.checkNotNull(name);
     }
 
     public void setId(final Integer id) {

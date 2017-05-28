@@ -1,9 +1,8 @@
-package br.com.cinq.spring.data.repository.test;
+package br.com.cinq.spring.data.sample.repository;
 
 import br.com.cinq.spring.data.sample.Application;
 import br.com.cinq.spring.data.sample.entity.City;
 import br.com.cinq.spring.data.sample.entity.Country;
-import br.com.cinq.spring.data.sample.repository.CityRepository;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -35,4 +34,5 @@ public class CityRepositoryTest {
 
         Assert.assertEquals(2, list.size());
     }
+
 }

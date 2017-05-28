@@ -2,6 +2,7 @@ package br.com.cinq.spring.data.sample.entity;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.google.common.base.MoreObjects;
+import com.google.common.base.Preconditions;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
@@ -26,7 +27,16 @@ public class City {
     @ManyToOne
     private Country country;
 
-    protected City() {
+    public City() {
+    }
+
+    public City(final String name, final Country country) {
+        this.name = Preconditions.checkNotNull(name);
+        this.country = Preconditions.checkNotNull(country);
+    }
+
+    public City(final Country country) {
+        this.country = Preconditions.checkNotNull(country);
     }
 
     public String getName() {
@@ -38,7 +48,7 @@ public class City {
     }
 
     public void setCountry(final Country country) {
-        this.country = country;
+        this.country = Preconditions.checkNotNull(country);
     }
 
     public void setId(final Integer id) {

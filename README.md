@@ -46,7 +46,7 @@ It must return, at least the following:
 
 The load cities feature is implemented through REST, accepting a JSON array of cities as input. The input does not need IDs, that are ignored if provided (names are used as unity criteria). The **curl** tool can be used for testing the POST operation:
 
-    curl -v -H "Content-Type: application/json" -d '[{"name": "San Francisco", "country": {"name": "United Status"}}]' http://localhost:8090/rest/cities 
+    curl -v -H "Content-Type: application/json" -d '[{"name": "San Francisco", "country": {"name": "United States"}}]' http://localhost:8090/rest/cities 
 
 The operation to load the data into database itself is asynchronous, so the expected response code is 202 (Accepted).
 
